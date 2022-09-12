@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<!-- saved from url=(0140)https://xgpt.wxc.edu.cn/phone/askForLeave/askForLeaveDetailSee.html?id=895cea03eda94749bc8bdfff4b9ecb30&key=f91f19d05b74050f6f672b3d45bbe0d4 -->
+<html style="font-size: 52.0533px;" class="pixel-ratio-3 retina ios ios-13 ios-13-2-3 ios-gt-12 ios-gt-11 ios-gt-10 ios-gt-9 ios-gt-8 ios-gt-7 ios-gt-6"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>请假审核</title>
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="format-detection" content="telephone=no">
+    <!--<link rel="icon" href="/images/favicon.ico" mce_href="/images/favicon.ico" type="image/x-icon">-->
+    <link rel="stylesheet" href="./details2_files/layui.css">
+    <link rel="stylesheet" href="./details2_files/weui.min.css">
+    <link rel="stylesheet" href="./details2_files/jquery-weui.css">
+    <link rel="stylesheet" href="./details2_files/phone.css">
+    <script src="./details2_files/rem.js.下载" charset="utf-8"></script><style id="rootsize">html{font-size:52.05333251953125px !important}</style>
+<style type="text/css">
+    .div-input-line .label-Tit{width:3.0rem;height:0.9rem;line-height:0.9rem;position:absolute;top:0;left:0.2rem;}
+    .weui-gallery {background-color: #ffffff}
+</style><link id="layuicss-laydate" rel="stylesheet" href="./details2_files/laydate.css" media="all"><link id="layuicss-layer" rel="stylesheet" href="./details2_files/layer.css" media="all"><link id="layuicss-skincodecss" rel="stylesheet" href="./details2_files/code.css" media="all"></head>
+
+<body style="font-size: 16px;">
+<form class="layui-form">
+    <div id="pksrshBlock" style="margin-top:0;min-height:calc(100% - 1.5rem);padding-bottom:1.5rem;">
+        <div class="div-input-line">
+            <div class="label-Tit">&nbsp;请假类型:</div>
+            <input type="text" id="askForLeaveType" name="askForLeaveType" autocomplete="off" lay-verify="required" placeholder="请选择" class="edit-input text-right" readonly="">
+        </div>
+        <div class="div-input-line">
+            <div class="label-Tit">&nbsp;请假原因:</div>
+            <textarea type="textarea" id="askForLeaveReason" name="askForLeaveReason" autocomplete="off" lay-verify="required" placeholder="请输入请假原因" class="edit-input text-right" readonly=""></textarea>
+        </div>
+        <div class="div-input-line">
+            <div class="label-Tit">&nbsp;请假开始时间:</div>
+            <input type="text" id="startTime" name="startTime" autocomplete="off" placeholder="请选择" lay-verify="required" class="edit-input text-right" readonly="">
+        </div>
+        <div class="div-input-line">
+            <div class="label-Tit">&nbsp;请假结束时间:</div>
+            <input type="text" id="endTime" name="endTime" autocomplete="off" placeholder="请选择" lay-verify="required" class="edit-input text-right" readonly="">
+        </div>
+        <div class="div-input-line">
+            <div class="label-Tit">&nbsp;请假天数:</div>
+            <input type="text" id="days" name="days" autocomplete="off" class="edit-input text-right" readonly="">
+        </div>
+        <div class="div-input-line">
+            <div class="label-Tit">&nbsp;联系电话:</div>
+            <input type="text" name="mobile" autocomplete="off" placeholder="请输入联系电话" lay-verify="required|phone" class="edit-input text-right" readonly="">
+        </div>
+        <div class="div-input-line">
+            <div class="label-Tit">&nbsp;紧急联系人:</div>
+            <input type="text" name="familyEmergencyPersonName" placeholder="请输入紧急联系人" autocomplete="off" lay-verify="required" class="edit-input text-right" readonly="">
+        </div>
+        <div class="div-input-line">
+            <div class="label-Tit">&nbsp;紧急联系人联系方式:</div>
+            <input type="text" name="familyEmergencyPersonMobile" placeholder="请输入紧急联系人联系方式" autocomplete="off" lay-verify="required|phone" class="edit-input text-right" readonly="">
+        </div>
+        <div class="div-input-line">
+            <div class="label-Tit">&nbsp;是否离校:</div>
+            <div class="weui-cell__bd base-font-28 text-right">
+                <input type="text" name="isLeave" id="isLeave" autocomplete="off" class="edit-input text-right" readonly="">
+            </div>
+        </div>
+        <div class="isLeaveInfo" id="isLeaveInfo" style="">
+            <div class="div-input-line">
+                <div class="label-Tit">&nbsp;离校类型:</div>
+                <input type="text" name="leaveSchoolType" id="leaveSchoolType" autocomplete="off" class="edit-input text-right" readonly="">
+            </div>
+            <div class="div-input-line">
+                <div class="label-Tit">&nbsp;离校原因:</div>
+                <input type="text" name="leaveSchoolReason" autocomplete="off" class="edit-input text-right" readonly="">
+            </div>
+            <div class="div-input-line">
+                <div class="label-Tit">&nbsp;离校时间:</div>
+                <input type="text" name="leaveSchoolTime" id="leaveSchoolTime" autocomplete="off" class="edit-input text-right" readonly="">
+            </div>
+            <div class="div-input-line">
+                <div class="label-Tit">&nbsp;返校时间:</div>
+                <input type="text" name="backSchoolTime" id="backSchoolTime" autocomplete="off" class="edit-input text-right" readonly="">
+            </div>
+            <div class="base-line-20"></div>
+            <div>
+                <button type="button" class="layui-btn layui-btn-primary" onclick="detail(this)">离校信息</button>
+            </div>
+            <div id="htmlContent"></div>
+        </div>
+
+        <div class="base-line-20"></div>
+        <div class="weui-cell-textarea-tit weui-cell">&nbsp;定位信息（请假）：</div>
+        <div class="weui-cell weui-cell-textarea">
+            <div class="weui-cell__bd">
+                <textarea id="locationName" name="locationName" class="weui-textarea" rows="3" style="line-height:1.5" readonly=""></textarea>
+            </div>
+        </div>
+        <div class="locationName2">
+            <div class="base-line-20"></div>
+            <div class="weui-cell-textarea-tit weui-cell">&nbsp;定位信息（销假）：</div>
+            <div class="weui-cell weui-cell-textarea">
+                <div class="weui-cell__bd">
+                    <textarea id="locationName2" name="locationName2" class="weui-textarea" rows="3" style="line-height:1.5" readonly=""></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="base-line-20"></div>
+
+        <div class="weui-cell-line2 bg-white" id="studentAutographShow"><div class="weui-cell weui-cell_access">
+            <div class="weui-cell__bd">
+                <div class="weui-uploader">
+                    <div class="weui-uploader__hd">
+                        <p class="weui-uploader__title">学生签名：</p>
+                    </div>
+                    <div class="weui-uploader__bd">
+                        <ul class="weui-uploader__files" id="studentAutographView" data-objectid="aac9a1528b85463489df3146275ecba7"><li class="weui-uploader__file"><img onclick="showImg(&#39;ef7f5fdadd0a46e69f35dae7ba40ec56&#39;)" src="./details2_files/showFile.do" style="width:100%; height:100%;"><div class="weui-gallery" onclick="hideImg()" id="img_ef7f5fdadd0a46e69f35dae7ba40ec56" style="display: none"><div class="filepic"><img class="" src="./details2_files/showFile.do" style="width:100%; height:100%;"></div></div></li></ul>
+                    </div>
+                </div>
+            </div>
+        </div></div>
+        <div class="base-line-20"></div>
+        <div class="showStatus1" style="">
+            <div class="base-line-20"></div>
+            <div class="weui-cell-textarea-tit weui-cell"><span class="text-red">*</span>班级审核</div>
+            <div class="weui-cell weui-cell_access">
+                <div class="weui-cell__hd"><label class="weui-label">审核结果</label></div>
+                <div class="layui-input-block">
+                    <input type="text" name="counsellorCheck" class="weui-textarea text-right" readonly="">
+                </div>
+            </div>
+            <div class="weui-cell-textarea-tit weui-cell">审核意见：</div>
+            <div class="weui-cell weui-cell-textarea">
+                <div class="weui-cell__bd">
+                    <textarea name="counsellorComments" class="weui-textarea" readonly="" rows="3"></textarea>
+                </div>
+            </div>
+            <div class="weui-cell-line2 bg-white" id="counsellorShow"><div class="weui-cell weui-cell_access">
+            <div class="weui-cell__bd">
+                <div class="weui-uploader">
+                    <div class="weui-uploader__hd">
+                        <p class="weui-uploader__title">辅导员签名：</p>
+                    </div>
+                    <div class="weui-uploader__bd">
+                        <ul class="weui-uploader__files" id="counsellorView" data-objectid="e8c6ce00142b40abae4dadb69bd11a3f"><li class="weui-uploader__file"><img onclick="showImg(&#39;ec7d832e12bb442e81fecb47684457f5&#39;)" src="./details2_files/showFile(1).do" style="width:100%; height:100%;"><div class="weui-gallery" onclick="hideImg()" id="img_ec7d832e12bb442e81fecb47684457f5" style="display: none"><div class="filepic"><img class="" src="./details2_files/showFile(1).do" style="width:100%; height:100%;"></div></div></li></ul>
+                    </div>
+                </div>
+            </div>
+        </div></div>
+        </div>
+        <div class="showStatus2" style="display:none">
+            <div class="base-line-20"></div>
+            <div class="weui-cell-textarea-tit weui-cell"><span class="text-red">*</span>学院审核</div>
+            <div class="weui-cell weui-cell_access">
+                <div class="weui-cell__hd"><label class="weui-label">审核结果</label></div>
+                <div class="layui-input-block">
+                    <input type="text" name="collegeCheck" class="weui-textarea text-right" readonly="">
+                </div>
+            </div>
+            <div class="weui-cell weui-cell-textarea">
+                <div class="weui-cell__bd">
+                    <textarea name="collegeComments" class="weui-textarea" readonly="" rows="3"></textarea>
+                </div>
+            </div>
+            <div class="weui-cell-line2 bg-white" id="collegeShow"></div>
+        </div>
+        <div class="showStatus3" style="display:none">
+            <div class="base-line-20"></div>
+            <div class="weui-cell-textarea-tit weui-cell"><span class="text-red">*</span>学校审核</div>
+            <div class="weui-cell weui-cell_access">
+                <div class="weui-cell__hd"><label class="weui-label">审核结果</label></div>
+                <div class="layui-input-block">
+                    <input type="text" name="schoolCheck" class="weui-textarea text-right" readonly="">
+                </div>
+            </div>
+            <div class="weui-cell weui-cell-textarea">
+                <div class="weui-cell__bd">
+                    <textarea name="schoolComments" class="weui-textarea" readonly="" rows="3"></textarea>
+                </div>
+            </div>
+            <div class="weui-cell-line2 bg-white" id="schoolShow"></div>
+        </div>
+        <div class="weui-cell-line2 bg-white" id="syncAutographShow" style="display: none"></div>
+    </div>
+    <div class="footfixed bg-white">
+        <div class="weui-flex twoBtnLine">
+            <input type="hidden" name="id" value="895cea03eda94749bc8bdfff4b9ecb30">
+            <input type="hidden" name="studentId" value="2019012051">
+            <input type="hidden" name="studentAutograph" value="aac9a1528b85463489df3146275ecba7">
+            <input type="hidden" name="collegeOrgId" value="d9133af5a63a4a8f948d5f92fac5be44">
+            <input type="hidden" name="counsellorId">
+            <input type="hidden" name="counsellorName">
+            <input type="hidden" name="counsellorAutograph" id="counsellorAutograph" value="e8c6ce00142b40abae4dadb69bd11a3f">
+            <input type="hidden" name="collegeAutograph" id="collegeAutograph">
+            <input type="hidden" name="schoolAutograph" id="schoolAutograph">
+            <div class="weui-flex__item" id="backBtn"><button type="button" class="layui-btn layui-btn-primary" onclick="window.history.go(-1)">返回</button></div>
+            <div style="display: none;" class="weui-flex__item" id="submitBtn"><button id="withdraw" type="button" class="layui-btn layui-btn-normal">撤回</button></div>
+        </div>
+    </div>
+</form>
+
+<script src="./details2_files/jquery-2.2.1.min.js.下载"></script>
+<script src="./details2_files/jquery-weui.js.下载"></script>
+<script src="./details2_files/layui.all.js.下载" charset="utf-8"></script>
+<script src="./details2_files/common.js.下载" charset="utf-8"></script>
+<script src="./details2_files/ajaxfileupload.js.下载"></script>
+<script src="./details2_files/jSignature.min.js.下载"></script>
+<script src="./details2_files/ajaxfileupload.js.下载"></script>
+<script>
+    let id = getRequestParams('id');
+
+    layui.define(['jquery', 'form', 'baseUtil','laydate','dialog'], function(exports){
+        let $ = layui.jquery,
+            form = layui.form,
+            dialog=layui.dialog,
+            baseUtil = layui.baseUtil;
+
+        let tableData = [];
+        let key = getRequestParams('key');
+        baseUtil.initDict('leaveSchoolType', function (dictContent) {
+            let url = '/work/asd/askForLeave/findVoOne.do?key='+key;
+            let params = {id: id};
+            let cols = [
+                {type: 'input', name: 'id'},
+                {type: 'input', name: 'studentId'},
+                {type: 'input', name: 'collegeName'},
+                {type: 'input', name: 'major'},
+                {type: 'input', name: 'grade'},
+                {type: 'input', name: 'name'},
+                {type: 'input', name: 'clazzName'},
+                {type: 'input', name: 'collegeOrgId'},
+                {type: 'input', name: 'mobile'},
+                {type: 'input', name: 'familyEmergencyPersonName'},
+                {type: 'input', name: 'familyEmergencyPersonMobile'},
+                {type: 'input', name: 'leaveSchoolReason'},
+                {type: 'input', name: 'leaveSchoolType'},
+                {type: 'input', name: 'studentAutograph'},
+                {type: 'input', name: 'counsellorAutograph'},
+                {type: 'textarea', name: 'askForLeaveReason'},
+                {type: 'input', name: 'collegeAutograph'},
+                {type: 'input', name: 'schoolAutograph'},
+                {type: 'input', name: 'counsellorCheck'},
+                {type: 'input', name: 'collegeCheck'},
+                {type: 'input', name: 'leaveSchoolTime'},
+                {type: 'input', name: 'backSchoolTime'},
+                {type: 'input', name: 'days'},
+                {type: 'textarea', name: 'counsellorComments'},
+                {type: 'textarea', name: 'collegeComments'},
+                {type: 'textarea', name: 'schoolComments'},
+                {type: 'input', name: 'isLeave'},
+                {type: 'input', name: 'isPoor'},
+                {type: 'input', name: 'schoolCheck'},
+                {type: 'textarea', name: 'locationName'},
+                {type: 'textarea', name: 'locationName2'}
+            ];
+            baseUtil.initFormData(url, params, cols, '', function (data) {
+                if (isNotBlank(data.locationName2)) {
+                    $('.locationName2').show();
+                }
+                $('#startTime').val(data.startTime.substr(0, 16));
+                $('#endTime').val(data.endTime.substr(0, 16));
+                let type=data.askForLeaveType;
+                if (type==='0'){
+                    $('#askForLeaveType').val("病假");
+                }else if(type==='1'){
+                    $('#askForLeaveType').val("事假");
+                }else{
+                    $('#askForLeaveType').val("其他");
+                }
+                if (data.status === '0'){
+                    $("#submitBtn").show();
+                }
+                if (data.isLeave === '1'){
+                    $('#isLeaveInfo').show();
+                    $('#isLeave').val("是");
+                }else if (data.isLeave === '0'){
+                    $('#isLeaveInfo').hide();
+                    $('#isLeave').val("否");
+                }
+                if (isNotBlank(data.backSchoolTime)){
+                    $('#backSchoolTime').val(data.backSchoolTime.substr(0, 10));
+                }
+                if (isNotBlank(data.leaveSchoolTime)){
+                    $('#leaveSchoolTime').val(data.leaveSchoolTime.substr(0, 10));
+                }
+                if (isNotBlank(data.leaveSchoolType)) {
+                    $('input[name="leaveSchoolType"]').val(baseUtil.showDictContent(dictContent, 'leaveSchoolType', data.leaveSchoolType));
+                }
+                if (isNotBlank(data.leaveSchoolWhere)) {
+                    tableData = JSON.parse(data.leaveSchoolWhere);
+                }
+                cytShowPicView('学生签名', 'studentAutographView', data.studentAutograph, 'studentAutographShow');
+                if (data.counsellorCheck !== '0') {
+                    $('input[name="counsellorCheck"]').val(data.counsellorCheck === '1' ? '同意' : '不同意');
+                    $('.showStatus1').show();
+                    var counsellorId=$('#counsellorAutograph').val();
+                    cytShowPicView('辅导员签名','counsellorView',counsellorId,'counsellorShow');
+                }
+                if (data.collegeCheck !== '0') {
+                    $('input[name="collegeCheck"]').val(data.collegeCheck === '1' ? '同意' : '不同意');
+                    $('.showStatus2').show();
+                    let collegeId=$('#collegeAutograph').val();
+                    cytShowPicView('院级签名','collegeView',collegeId,'collegeShow');
+                }
+                if (data.schoolCheck !== '0') {
+                    $('input[name="schoolCheck"]').val(data.schoolCheck === '1' ? '同意' : '不同意');
+                    $('.showStatus3').show();
+                    let schoolId=$('#schoolAutograph').val();
+                    cytShowPicView('校级签名','schoolView',schoolId,'schoolShow');
+                }
+                $("#withdraw").bind("click",function (){
+                    baseUtil.doPostData('/work/asd/askForLeave/revert.do?key=' + key, {id: data.id}, function () {
+                        window.location.href = "/phone/askForLeave/askForLeaveList.html?key=" + key;
+                        return false;
+                    })
+                });
+            });
+        });
+        window.detail = function (){
+            baseUtil.initDict('vehicle', function (dictContent) {
+            $("#htmlContent").html("");
+            for(var i=0;i<tableData.length;i++){
+                var data=tableData[i];
+                var vehicle=baseUtil.showDictContent(dictContent, 'vehicle', data.vehicle);
+                var html = '<div class="block-div-line" style="padding-right: 0.2rem!important;">' +
+                    '<div class="div-input-line">' +
+                    '<div class="label-Tit">&nbsp;目的地(含中转地):</div>' +
+                    '<input type="text"  name="leaveWhere" autocomplete="off" value="'+data.leaveWhere+'" placeholder="请选择" class="edit-input text-right" readonly >' +
+                    '</div>' +
+                    '<div class="div-input-line">' +
+                    '<div class="label-Tit">&nbsp;逗留时间:</div>' +
+                    '<input type="text"  name="stayTime" autocomplete="off" value="'+data.stayTime+'"  placeholder="请选择" class="edit-input text-right" readonly>' +
+                    '</div>' +
+                    '<div class="div-input-line">' +
+                    '<div class="label-Tit">&nbsp;交通工具:</div>' +
+                    '<input type="text" id="vehicle'+data.orderNum+'" name="vehicle" autocomplete="off" value="'+vehicle+'" placeholder="请选择" class="edit-input text-right" readonly>' +
+                    '</div>' +
+                    '<div class="div-input-line" id="bc'+data.orderNum+'" style="display: none">' +
+                    '<div class="label-Tit">&nbsp;班次信息:</div>' +
+                    '<input class="edit-input text-right bcx" type="text" name="transport" value="'+data.transport+'"  placeholder="请输入班次信息" autocomplete="off" maxlength="10" readonly>' +
+                    '</div>' +
+                    '<div class="div-input-line">' +
+                    '<div class="label-Tit">&nbsp;备注:</div>' +
+                    '<input type="text" name="remark" autocomplete="off" value="'+data.remark+'" placeholder="请选择" class="edit-input text-right" readonly>' +
+                    '</div>' +
+                    '</div>';
+                $("#htmlContent").append(html);
+                if(data.vehicle === "1") {
+                    var obj = document.getElementById("bc"+data.orderNum);
+                    obj.style.display = "";
+                    $(".bcx").attr("lay-verify","required");
+                }
+                else if(data.vehicle === "2") {
+                    var obj = document.getElementById("bc"+data.orderNum);
+                    obj.style.display = "";
+                    $(".bcx").attr("lay-verify","required");
+                }
+                else if(data.vehicle === "3") {
+                    var obj = document.getElementById("bc"+data.orderNum);
+                    obj.style.display = "";
+                    $(".bcx").attr("lay-verify","required");
+                }
+                else{
+                    var obj = document.getElementById("bc"+data.orderNum);
+                    obj.style.display= "none";
+                    $(".bcx").removeAttr("lay-verify");
+                }
+
+            }
+            });
+        }
+
+
+    });
+
+</script>
+
+
+<div class="layui-layer-move"></div></body></html>

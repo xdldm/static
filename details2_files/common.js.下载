@@ -1,0 +1,484 @@
+layui.config({
+    base: '/script/module/',
+    version: "4.1.4"
+}).extend({
+    baseUtil: 'baseUtil',
+    fileUtil: 'fileUtil',
+    treeTable: 'treeTable',
+    layui:'dialog',
+    dialog:'dialogs',
+    step: '../../lib/step/step',
+    cityPicker: '../../lib/city-picker/city-picker',
+    dtree: '../../lib/dtree/dtree',
+    dtree2: '../../lib/dtree/dtree2',
+    sliderVerify: '../../lib/sliderverify/sliderVerify',
+    dtreeUtil: 'dtreeUtil',
+    selectM: '../../lib/selectMN/selectM',
+    selectN: '../../lib/selectMN/selectN',
+    selectMNUtil: '../../lib/selectMN/selectMNUtil',
+});
+var $;
+layui.use(['jquery'], function () {
+    $ = layui.jquery;
+
+});
+/**
+ * 空校验
+ */
+function isBlank (value) {
+    return (value === '' || value === null || value === 'null' || value === undefined || value === 'undefined');
+}
+
+/**
+ * 非空校验
+ */
+function isNotBlank (value) {
+    return !isBlank(value);
+}
+
+/**
+ * 空校验
+ */
+function isEmpty (value) {
+    return value == null || value.length === 0;
+}
+
+/**
+ * 非空校验
+ */
+function isNotEmpty (value) {
+    return !isEmpty(value);
+}
+
+/**
+ * 保存token
+ */
+function setAccessToken (token) {
+    layui.data('access_token', { key: 'token', value: token });
+}
+
+/**
+ * 获取token
+ */
+function getAccessToken () {
+    return layui.data('access_token')['token'];
+}
+
+/**
+ * 删除token
+ */
+function removeAccessToken () {
+    layui.data('access_token', { key: 'token', remove: true });
+}
+
+/**
+ * 获取请求参数
+ */
+function getRequestParams (name) {
+    var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+    var r = window.location.search.substr(1).match(reg);
+    return r != null ? (r[2]) : '';
+}
+
+/**
+ * 转中文后获取请求参数
+ */
+function getRequestCNParams (name) {
+    var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+    var r = decodeURIComponent(window.location.search).substr(1).match(reg);
+    return r != null ? (r[2]) : '';
+}
+
+/**
+ * 获取对象参数
+ */
+function getObjectParams (data) {
+    var params = [];
+    for (var i in data) {
+        var key = encodeURIComponent(i);
+        var value = encodeURIComponent(data[i]);
+        if (isNotBlank(value)) {
+            params.push(key + '=' + value);
+        }
+    }
+    return params.length === 0 ? '' : '?' + params.join('&');
+}
+/**
+ * 传递参数
+ */
+var selectObjctParams = [];
+
+function cytSelectObjctParams() {
+    return selectObjctParams;
+}
+
+function cytSetSelectObjctParams(params) {
+    selectObjctParams = params;
+}
+/**
+ * 获取所有多选框选择的id
+ * @author 虞胜强
+ * @date 2018/2/8
+ * */
+function getAllId(obj) {
+    var arr = [];
+    obj.find(":checkbox[name='singleselect']").each(function (i, e) {
+        var id = $(e).parents("tr").find("td:eq(0)").find('input').val();
+        arr.push(id);
+    });
+    var ids = arr.join(",");
+    return ids
+}
+/**
+ * 获取UUID
+ */
+function getUUID (n) {
+    if (isBlank(n)){
+        n = 32;
+    }
+    var str = "abcdefghijklmnopqrstuvwxyz0123456789"; // 可以作为常量放到random外面
+    var result = "";
+    for(var i = 0; i < n; i++) {
+        result += str[parseInt(Math.random() * str.length)];
+    }
+    return result;
+}
+/**
+ * 获取学年返回字典
+ */
+function getSchoolYear (content) {
+    var currentYear = parseInt((new Date()).getFullYear()) + 1;
+    for (let i = currentYear; i > 2010; i--) {
+        content.push({dictCode: 'schoolYear', value: (i - 1) + '-' + i, name: (i - 1) + '-' + i});
+    }
+    return content;
+}
+/**
+ * 获取某个日期的前后日期
+ */
+function  getMonthDate(dateStr, n) {
+    var s = dateStr.split("-");
+    var yy = parseInt(s[0]);
+    var mm = parseInt(s[1]);
+    var dd = parseInt(s[2]);
+    var num=parseInt(mm) + parseInt(n);
+    if(num/12>1){
+        yy+=Math.floor(num/12) ;
+        mm=num%12;
+    }else{
+        mm+=parseInt(n);
+    }
+    return yy + "-" + mm  + "-" + dd;
+}
+
+/**
+ * 获取字符串当前日期
+ * @author: yu yong
+ * @date: 2022-2-28 16:43:04
+ */
+function getNowDate(){
+    var now = new Date();
+    var year = now.getFullYear();
+    var month = now.getMonth() + 1 < 10 ? "0" + (now.getMonth() + 1):now.getMonth() + 1;
+    var day = now.getDate() < 10 ? "0" + now.getDate() : now.getDate();
+    var nowDate = year + "-" + month + "-" + day;
+    return nowDate;
+}
+
+/**
+ * 获取字符串当前时间
+ */
+function getDateTime() {
+    var now = new Date();
+    var year = now.getFullYear();       //年
+    var month = now.getMonth() + 1;     //月
+    var day = now.getDate();            //日
+    var hh = now.getHours();            //时
+    var mm = now.getMinutes();          //分
+    var ss = now.getSeconds();            //秒
+    var clock = year + "-";
+    if (month < 10) clock += "0";
+    clock += month + "-";
+    if (day < 10) clock += "0";
+    clock += day + " ";
+    if (hh < 10) clock += "0";
+    clock += hh + ":";
+    if (mm < 10) clock += '0';
+    clock += mm + ":";
+    if (ss < 10) clock += '0';
+    clock += ss;
+
+    return clock;
+}
+
+/**
+ * 根据身份证号获取出生年月
+ */
+function getBirthdayFromIdCard(idCard) {
+    let birthday = "";
+    if(idCard != null && idCard != ""){
+        if(idCard.length == 15){
+            birthday = "19"+idCard.substr(6,4);
+        } else if(idCard.length == 18){
+            birthday = idCard.substr(6,6);
+        }
+        birthday = birthday.replace(/(.{4})(.{2})/,"$1年$2月");
+    }
+    return birthday;
+}
+/**
+ * 根据身份证号获取信息
+ */
+function getFromIdCard(UUserCard, num) {
+    if(isNotBlank(UUserCard)){
+        if (num == 1) {
+            //获取出生日期
+            let birth = UUserCard.substring(6, 10) + "-" + UUserCard.substring(10, 12) + "-" + UUserCard.substring(12, 14);
+            return birth;
+        }
+        if (num == 2) {
+            //获取性别
+            if (parseInt(UUserCard.substr(16, 1)) % 2 == 1) {
+                //男
+                return "男";
+            } else {
+                //女
+                return "女";
+            }
+        }
+        if (num == 3) {
+            //获取年龄
+            var myDate = new Date();
+            var month = myDate.getMonth() + 1;
+            var day = myDate.getDate();
+            var age = myDate.getFullYear() - UUserCard.substring(6, 10) - 1;
+            if (UUserCard.substring(10, 12) < month || UUserCard.substring(10, 12) == month && UUserCard.substring(12, 14) <= day) {
+                age++;
+            }
+            return age;
+        }
+    }
+}
+
+/**
+ * 根据文件名返回对应的图片地址
+ */
+function getFileTypeImg(fileName) {
+    let suffix = ''
+    // 获取类型结果
+    let result = ''
+    try {
+        const flieArr = fileName.split('.')//根据.分割数组
+        suffix = flieArr[flieArr.length - 1]//取最后一个
+    } catch (err) {//如果fileName为空等.split方法会报错，就走下面的逻辑
+        suffix = ''
+    }
+    // fileName无后缀返回 false
+    if (!suffix) {//走catch后返回false
+        return false
+    }
+    suffix = suffix.toLocaleLowerCase()//将后缀所有字母改为小写方便操作
+    /*  这里开始写入需要判断的逻辑体  */
+    // 图片格式
+    const imglist = ['png', 'jpg', 'jpeg', 'bmp', 'gif']//可以将符合该分类的后缀都写入数组里
+    // 进行图片匹配
+    result = imglist.find(item => item === suffix)
+    if (result) {
+        return 'pic'
+    }
+    // 匹配txt
+    const txtlist = ['txt']
+    result = txtlist.find(item => item === suffix)
+    if (result) {
+        return 'txt'
+    }
+    // 匹配 excel
+    const excelist = ['xls', 'xlsx']
+    result = excelist.find(item => item === suffix)
+    if (result) {
+        return 'excel'
+    }
+    // 匹配 word
+    const wordlist = ['doc', 'docx']
+    result = wordlist.find(item => item === suffix)
+    if (result) {
+        return 'word'
+    }
+    // 匹配 pdf
+    const pdflist = ['pdf']
+    result = pdflist.find(item => item === suffix)
+    if (result) {
+        return 'pdf'
+    }
+    // 匹配 ppt
+    const pptlist = ['ppt', 'pptx']
+    result = pptlist.find(item => item === suffix)
+    if (result) {
+        return 'ppt'
+    }
+    // 匹配 视频
+    const videolist = [
+        'mp4',
+        'm2v',
+        'mkv',
+        'rmvb',
+        'wmv',
+        'avi',
+        'flv',
+        'mov',
+        'm4v'
+    ]
+    result = videolist.find(item => item === suffix)
+    if (result) {
+        return 'video'
+    }
+    // 匹配 音频
+    const radiolist = ['mp3', 'wav', 'wmv']
+    result = radiolist.find(item => item === suffix)
+    if (result) {
+        return 'radio'
+    }
+    // 匹配 压缩包
+    const ziplist = ['zip', 'rar']
+    result = ziplist.find(item => item === suffix)
+    if (result) {
+        return 'zip'
+    }
+
+    return 'other'//以上的判断逻辑都没return时反馈当前后缀是其他类型文件后缀
+}
+
+function getNowWeekStartAndEndDate() {
+    let data = new Date() //当前日期
+    let year = Number(data.getFullYear());//当前年
+    let month = Number(data.getMonth())+1;
+    let nowMonth =Number(data.getMonth()); //当前月
+    let day = Number(data.getDate()); //当天
+    // 计算某日是本月第几周
+    let mydate=new Date(year,month-1,day);
+    //获取该日是星期几，0代表星期日//今天本周的第几天
+    let weekday=mydate.getDay();
+    let weekno=Math.ceil((day + 6 - weekday) / 7); // 本月第几周
+    //获取当前周的开始结束时间
+    let startTime //本周的开始时间
+    let endTime //本周的结束时间
+    function formatDate(date) {
+        let myyear = Number(date.getFullYear());
+        let mymonth = Number(date.getMonth()+1);
+        let myweekday = Number( date.getDate());
+        if(mymonth < 10){
+            mymonth = "0" + mymonth;
+        }
+        if(myweekday < 10){
+            myweekday = "0" + myweekday;
+        }
+        return (myyear+"-"+mymonth + "-" + myweekday);
+    }
+    //获得本周的开始日期
+    function getWeekStartDate() {
+        let weekStartDate = new Date(year, nowMonth, day + 1 - weekday);
+        return formatDate(weekStartDate);
+    }
+    //获得本周的结束日期
+    function getWeekEndDate() {
+        let weekEndDate = new Date(year, nowMonth, day + 7 - weekday);
+        return formatDate(weekEndDate);
+    }
+    startTime=getWeekStartDate()
+    endTime=getWeekEndDate()
+    return startTime+"~"+endTime;
+}
+
+// 移动端暂无数据-方圆
+$(function () {
+    nodata();
+})
+function nodata() {
+    var str='<div class="nodate-ctn-out">\n' +
+        '        <div class="nodate-ctn-in">\n' +
+        '            <div class="nodataImg"><img src="/phone/images/nodatapic.png"></div>\n' +
+        '            <div class="text-center base-font-28 text-999 margin-top20">暂无数据</div>\n' +
+        '        </div>\n' +
+        '    </div>'
+    $(".nodate-ctn").html(str)
+}
+
+// PC端暂无数据-方圆
+function nodataPc(idName,height,border){
+    $(idName).html("")
+    var str='<div class="nodataBox '+(border==false?'border-0':'')+'" style="height: '+((height==null||height==''||height==undefined||height=='')?400:height)+'px;">\n' +
+        '        <div class="nodataIn">\n' +
+        '            <div class="nodataImg"><img src="/image/nodata.png"></div>\n' +
+        '            <div class="nodataTxt">暂无数据</div>\n' +
+        '        </div>\n' +
+        '    </div>'
+    $(idName).html(str)
+}
+
+function getPage () {
+    var curr = sessionStorage.getItem(window.location.href + '_' + 'pageNum');
+    if (isBlank(curr)) {
+        curr = 1;
+    }
+    var limit = sessionStorage.getItem(window.location.href + '_' + 'pageSize');
+    if (isBlank(limit)) {
+        limit = 20;
+    }
+    return { limit: parseInt(limit), curr: parseInt(curr) };
+}
+
+
+//移动端底部菜单
+var menList=[
+    {id:1,name:"资讯",icon:"newIcon",url:"/phone/wxNews/newListTab.html"},
+    {id:1,name:"应用",icon:"yyIcon",url:"/phone/pageIndex.html"},
+    {id:1,name:"我的",icon:"myIcon",url:"/phone/myCenter/myCenter.html"}
+]
+function  setMenu(tabCur,idName,key){
+    var str=''
+    menList.forEach(function (item,index){
+        str+='<div class="weui-flex__item">' +
+            // '        <div class="footMenu" onclick="footMenuClick('+index+','+key+')">'
+            `<div class="footMenu" onclick="footMenuClick(${index},'${key}')">`
+        if(tabCur==index){
+                str+='<div class="icon"><img src="/phone/images/'+item.icon+'_cur.png">' +
+                    '</div><div class="menuName ellipsis base-font-20" style="color: 409EFF">'+item.name+'</div>'
+            }
+            else{
+                str+='<div class="icon"><img src="/phone/images/'+item.icon+'.png">' +
+                    '</div><div class="menuName ellipsis base-font-20">'+item.name+'</div>'
+            }
+            str+='  </div>' +
+            '    </div>'
+    })
+    $(idName).html(str)
+}
+
+window.footMenuClick=function(index,key){
+    // window.location.href = "/phone/menuPage.html?key=" + key;
+    window.location.href =menList[index].url+"?key=" + key;
+}
+//PC端步骤条的封装--方圆
+function setChecked(list,num,idname,numShow){//list,数组，num：选中的第二个按钮，numShow:数字是否显示
+    var str=''
+    if (num==''||num==null||num=="no"||num<1){
+        num==1
+    }
+    else if(num>list.length){
+        num=list.length
+    }
+    if (numShow==''||numShow==false){
+        numShow=false
+    }
+    else{numShow=true}
+    var number=''
+    list.forEach(function (item,index){
+        number=(num-1)
+        str+=' <div class="cyt-step-li '+(index<=number?"cyt-step-li-on":"")+'">';
+        if(numShow==true){
+            str+=' <span>'+(index+1)+'</span>';
+        }
+        str+=item.name+'</div>';
+    })
+    $(idname).html('<div class="cyt-step">'+str+'</div>')
+}
