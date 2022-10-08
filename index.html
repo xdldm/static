@@ -14,11 +14,11 @@
     <meta content="email=no" name="format-detection">
     <meta name="format-detection" content="telephone=no">
     <!--<link rel="icon" href="/images/favicon.ico" mce_href="/images/favicon.ico" type="image/x-icon">-->
-    <link rel="stylesheet" href="./index_files/weui.min.css">
-    <link rel="stylesheet" href="./index_files/jquery-weui.css">
-    <link rel="stylesheet" href="./index_files/layui.css">
-    <link rel="stylesheet" href="./index_files/phone.css">
-    <script src="./index_files/rem.js.下载" charset="utf-8"></script><style id="rootsize">html{font-size:52.05333251953125px !important}</style>
+    <link rel="stylesheet" href="./index/weui.min.css">
+    <link rel="stylesheet" href="./index/jquery-weui.css">
+    <link rel="stylesheet" href="./index/layui.css">
+    <link rel="stylesheet" href="./index/phone.css">
+    <script src="./index/rem.js.下载" charset="utf-8"></script><style id="rootsize">html{font-size:52.05333251953125px !important}</style>
 <style type="text/css">
     .weui-cell_select .weui-cell__bd:after {
         right: 0.1rem;
@@ -28,21 +28,21 @@
         text-align: right;
         width: calc(100% - 0.24rem)
     }
-</style><link id="layuicss-laydate" rel="stylesheet" href="./index_files/laydate.css" media="all"><link id="layuicss-layer" rel="stylesheet" href="./index_files/layer.css" media="all"><link id="layuicss-skincodecss" rel="stylesheet" href="./index_files/code.css" media="all"></head>
+</style><link id="layuicss-laydate" rel="stylesheet" href="./index/laydate.css" media="all"><link id="layuicss-layer" rel="stylesheet" href="./index/layer.css" media="all"><link id="layuicss-skincodecss" rel="stylesheet" href="./index_files/code.css" media="all"></head>
 
 <body style="min-height: calc(100% - 1.2rem); height: auto; padding-bottom: 1.2rem; box-sizing: inherit; font-size: 16px;">
 <div class="base-w-702">
     <div class="swiper-container homePageBanner swiper-container-horizontal" data-space-between="10" data-pagination=".swiper-pagination" data-autoplay="1000">
         <div class="swiper-wrapper" style="transform: translate3d(-963px, 0px, 0px); transition-duration: 0ms;"><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="2" style="width: 321px;"><img src="./index_files/banner02.png" alt=""></div>
-            <div class="swiper-slide" data-swiper-slide-index="0" style="width: 321px;"><img src="./index_files/banner.png" alt=""></div>
-            <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="1" style="width: 321px;"><img src="./index_files/banner01.png" alt=""></div>
-            <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="2" style="width: 321px;"><img src="./index_files/banner02.png" alt=""></div>
-        <div class="swiper-slide swiper-slide-duplicate swiper-slide-next" data-swiper-slide-index="0" style="width: 321px;"><img src="./index_files/banner.png" alt=""></div></div>
+            <div class="swiper-slide" data-swiper-slide-index="0" style="width: 321px;"><img src="./index/banner.png" alt=""></div>
+            <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="1" style="width: 321px;"><img src="./index/banner01.png" alt=""></div>
+            <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="2" style="width: 321px;"><img src="./index/banner02.png" alt=""></div>
+        <div class="swiper-slide swiper-slide-duplicate swiper-slide-next" data-swiper-slide-index="0" style="width: 321px;"><img src="./index/banner.png" alt=""></div></div>
         <div class="swiper-pagination swiper-pagination-bullets"><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span></div>
         --&gt;
     </div>
     <div class="homePageNotice">
-        <div class="labelIcon" style="display: none"><img src="./index_files/noticeIcon.png"></div>
+        <div class="labelIcon" style="display: none"><img src="./index/noticeIcon.png"></div>
         <div class="rightUser">
             <div class="weui-cells" style="margin-top:0!important;">
                 <div class="weui-cell weui-cell_select" style="padding:0!important;">
@@ -60,15 +60,15 @@
         <div onclick="moreToDo()" class="menu">
             <div class="menuIcon">
                 <div id="dbNum" class="listNum">0</div>
-                <img src="./index_files/ybsxMenu.png"></div>
+                <img src="./index/ybsxMenu.png"></div>
             <div class="base-font-30 text-333 margin-top20">待办事项</div>
         </div>
         <div onclick="moreHaveDo()" class="menu">
-            <div class="menuIcon"><img src="./index_files/dbsxMenu.png"></div>
+            <div class="menuIcon"><img src="./index/dbsxMenu.png"></div>
             <div class="base-font-30 text-333 margin-top20">已办事项</div>
         </div>
         <div onclick="moreNotice()" class="menu">
-            <div class="menuIcon"><img src="./index_files/tzggMenu.png"></div>
+            <div class="menuIcon"><img src="./index/tzggMenu.png"></div>
             <div class="base-font-30 text-333 margin-top20">通知公告</div>
         </div>
     </div>
@@ -77,16 +77,16 @@
 <div class="">
     <!--        <div class="base-font-30 text-666 text-bold base-h-90" style="padding-left:0.24rem;box-sizing:border-box;">我的菜单</div>-->
     <div id="menuList"><div class="base-font-32 text-333 text-bold base-h-90" style="padding-left:0.24rem;box-sizing:border-box;">学生信息管理</div>    <div class="flex text-center"><div onclick="jumpClick(1,&#39;/phone/studentInfoRegister/edit.html&#39;,&#39;&#39;)" class="flex-col-4">
-  <div class="menuListIconImage"><img src="./index_files/30.png"></div>     <div class="base-font-22 text-333 margin-top16 ellipsis" style="box-sizing:border-box;padding-left:0.2rem;padding-right:0.2rem">学生信息登记</div>     </div></div><div class="base-h-20"></div><div class="base-font-32 text-333 text-bold base-h-90" style="padding-left:0.24rem;box-sizing:border-box;">学生日常管理</div>    <div class="flex text-center"><div onclick="jumpClick(1,&#39;/phone/askForLeave/askForLeaveList.html&#39;,&#39;&#39;)" class="flex-col-4">
-  <div class="menuListIconImage"><img src="./index_files/23.png"></div>     <div class="base-font-22 text-333 margin-top16 ellipsis" style="box-sizing:border-box;padding-left:0.2rem;padding-right:0.2rem">请销申请</div>     </div><div onclick="jumpClick(1,&#39;/phone/askForLeave/askLeaveCancellationList.html&#39;,&#39;&#39;)" class="flex-col-4">
-  <div class="menuListIconImage"><img src="./index_files/0.png"></div>     <div class="base-font-22 text-333 margin-top16 ellipsis" style="box-sizing:border-box;padding-left:0.2rem;padding-right:0.2rem">销假确认</div>     </div><div onclick="jumpClick(1,&#39;/phone/leaveBackSchool/backRecordList.html&#39;,&#39;&#39;)" class="flex-col-4">
-  <div class="menuListIconImage"><img src="./index_files/23.png"></div>     <div class="base-font-22 text-333 margin-top16 ellipsis" style="box-sizing:border-box;padding-left:0.2rem;padding-right:0.2rem">返校申请</div>     </div><div onclick="jumpClick(1,&#39;/phone/lateCall/lateCall.html&#39;,&#39;&#39;)" class="flex-col-4">
-  <div class="menuListIconImage"><img src="./index_files/0.png"></div>     <div class="base-font-22 text-333 margin-top16 ellipsis" style="box-sizing:border-box;padding-left:0.2rem;padding-right:0.2rem">晚点名</div>     </div></div><div class="base-h-20"></div><div class="base-font-32 text-333 text-bold base-h-90" style="padding-left:0.24rem;box-sizing:border-box;">信息收集管理</div>    <div class="flex text-center"><div onclick="jumpClick(1,&#39;/phone/epidemicDaily/epidemicDailyStudentList.html&#39;,&#39;&#39;)" class="flex-col-4">
-  <div class="menuListIconImage"><img src="./index_files/35.png"></div>     <div class="base-font-22 text-333 margin-top16 ellipsis" style="box-sizing:border-box;padding-left:0.2rem;padding-right:0.2rem">我的疫情日报</div>     </div><div onclick="jumpClick(1,&#39;/phone/course/courseSignList.html&#39;,&#39;&#39;)" class="flex-col-4">
-  <div class="menuListIconImage"><img src="./index_files/23.png"></div>     <div class="base-font-22 text-333 margin-top16 ellipsis" style="box-sizing:border-box;padding-left:0.2rem;padding-right:0.2rem">活动申请</div>     </div><div onclick="jumpClick(1,&#39;/phone/questionnaire/list.html&#39;,&#39;&#39;)" class="flex-col-4">
-  <div class="menuListIconImage"><img src="./index_files/0.png"></div>     <div class="base-font-22 text-333 margin-top16 ellipsis" style="box-sizing:border-box;padding-left:0.2rem;padding-right:0.2rem">问卷调查</div>     </div><div onclick="jumpClick(1,&#39;/phone/onLineTesting/list.html&#39;,&#39;&#39;)" class="flex-col-4">
-  <div class="menuListIconImage"><img src="./index_files/0.png"></div>     <div class="base-font-22 text-333 margin-top16 ellipsis" style="box-sizing:border-box;padding-left:0.2rem;padding-right:0.2rem">在线测试</div>     </div></div><div class="base-h-20"></div><div class="base-font-32 text-333 text-bold base-h-90" style="padding-left:0.24rem;box-sizing:border-box;">学生奖惩</div>    <div class="flex text-center"><div onclick="jumpClick(1,&#39;/phone/grantReward/recordList.html&#39;,&#39;&#39;)" class="flex-col-4">
-  <div class="menuListIconImage"><img src="./index_files/23.png"></div>     <div class="base-font-22 text-333 margin-top16 ellipsis" style="box-sizing:border-box;padding-left:0.2rem;padding-right:0.2rem">奖助申请</div>     </div></div><div class="base-h-20"></div></div>
+  <div class="menuListIconImage"><img src="./index/30.png"></div>     <div class="base-font-22 text-333 margin-top16 ellipsis" style="box-sizing:border-box;padding-left:0.2rem;padding-right:0.2rem">学生信息登记</div>     </div></div><div class="base-h-20"></div><div class="base-font-32 text-333 text-bold base-h-90" style="padding-left:0.24rem;box-sizing:border-box;">学生日常管理</div>    <div class="flex text-center"><div onclick="jumpClick(1,&#39;/phone/askForLeave/askForLeaveList.html&#39;,&#39;&#39;)" class="flex-col-4">
+  <div class="menuListIconImage"><img src="./index/23.png"></div>     <div class="base-font-22 text-333 margin-top16 ellipsis" style="box-sizing:border-box;padding-left:0.2rem;padding-right:0.2rem">请销申请</div>     </div><div onclick="jumpClick(1,&#39;/phone/askForLeave/askLeaveCancellationList.html&#39;,&#39;&#39;)" class="flex-col-4">
+  <div class="menuListIconImage"><img src="./index/0.png"></div>     <div class="base-font-22 text-333 margin-top16 ellipsis" style="box-sizing:border-box;padding-left:0.2rem;padding-right:0.2rem">销假确认</div>     </div><div onclick="jumpClick(1,&#39;/phone/leaveBackSchool/backRecordList.html&#39;,&#39;&#39;)" class="flex-col-4">
+  <div class="menuListIconImage"><img src="./index/23.png"></div>     <div class="base-font-22 text-333 margin-top16 ellipsis" style="box-sizing:border-box;padding-left:0.2rem;padding-right:0.2rem">返校申请</div>     </div><div onclick="jumpClick(1,&#39;/phone/lateCall/lateCall.html&#39;,&#39;&#39;)" class="flex-col-4">
+  <div class="menuListIconImage"><img src="./index/0.png"></div>     <div class="base-font-22 text-333 margin-top16 ellipsis" style="box-sizing:border-box;padding-left:0.2rem;padding-right:0.2rem">晚点名</div>     </div></div><div class="base-h-20"></div><div class="base-font-32 text-333 text-bold base-h-90" style="padding-left:0.24rem;box-sizing:border-box;">信息收集管理</div>    <div class="flex text-center"><div onclick="jumpClick(1,&#39;/phone/epidemicDaily/epidemicDailyStudentList.html&#39;,&#39;&#39;)" class="flex-col-4">
+  <div class="menuListIconImage"><img src="./index/35.png"></div>     <div class="base-font-22 text-333 margin-top16 ellipsis" style="box-sizing:border-box;padding-left:0.2rem;padding-right:0.2rem">我的疫情日报</div>     </div><div onclick="jumpClick(1,&#39;/phone/course/courseSignList.html&#39;,&#39;&#39;)" class="flex-col-4">
+  <div class="menuListIconImage"><img src="./index/23.png"></div>     <div class="base-font-22 text-333 margin-top16 ellipsis" style="box-sizing:border-box;padding-left:0.2rem;padding-right:0.2rem">活动申请</div>     </div><div onclick="jumpClick(1,&#39;/phone/questionnaire/list.html&#39;,&#39;&#39;)" class="flex-col-4">
+  <div class="menuListIconImage"><img src="./index/0.png"></div>     <div class="base-font-22 text-333 margin-top16 ellipsis" style="box-sizing:border-box;padding-left:0.2rem;padding-right:0.2rem">问卷调查</div>     </div><div onclick="jumpClick(1,&#39;/phone/onLineTesting/list.html&#39;,&#39;&#39;)" class="flex-col-4">
+  <div class="menuListIconImage"><img src="./index/0.png"></div>     <div class="base-font-22 text-333 margin-top16 ellipsis" style="box-sizing:border-box;padding-left:0.2rem;padding-right:0.2rem">在线测试</div>     </div></div><div class="base-h-20"></div><div class="base-font-32 text-333 text-bold base-h-90" style="padding-left:0.24rem;box-sizing:border-box;">学生奖惩</div>    <div class="flex text-center"><div onclick="jumpClick(1,&#39;/phone/grantReward/recordList.html&#39;,&#39;&#39;)" class="flex-col-4">
+  <div class="menuListIconImage"><img src="./index/23.png"></div>     <div class="base-font-22 text-333 margin-top16 ellipsis" style="box-sizing:border-box;padding-left:0.2rem;padding-right:0.2rem">奖助申请</div>     </div></div><div class="base-h-20"></div></div>
 </div>
 <div id="threeMenu" style="display: none" class="tc">
     <div class="tcCtn">
@@ -107,10 +107,10 @@
 
 
 
-<script src="./index_files/jquery-2.2.1.min.js.下载"></script>
-<script src="./index_files/jquery-weui.js.下载"></script>
-<script src="./index_files/layui.all.js.下载" charset="utf-8"></script>
-<script src="./index_files/common.js.下载" charset="utf-8"></script>
+<script src="./index/jquery-2.2.1.min.js.下载"></script>
+<script src="./index/jquery-weui.js.下载"></script>
+<script src="./index/layui.all.js.下载" charset="utf-8"></script>
+<script src="./index/common.js.下载" charset="utf-8"></script>
 <script type="text/javascript" src="./index_files/swiper.js.下载" charset="utf-8"></script>
 <script>
     layui.define(['jquery', 'form', 'baseUtil'], function (exports) {
